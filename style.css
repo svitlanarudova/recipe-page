@@ -162,14 +162,14 @@ body {
   margin-block-end: 2.5rem;
 }
 .omelette__body {
-  padding-inline: var(--space-xxl);
-  padding-block-end: var(--space-xxl);
-}
-.omelette__body {
   display: flex;
   flex-direction: column;
   row-gap: var(--space-xl);
+  padding-inline: var(--space-xxl);
+  padding-block-end: var(--space-xxl);
+
 }
+
 .omelette__body > section {
   display: flex;
   flex-direction: column;
@@ -251,10 +251,10 @@ body {
   border-block-start: var(--w-separator-line) solid var(--color-stone-150);
 }
 
-.__counter {
+.--counter {
   counter-reset: counter-instructions;
 }
-.__counter > li {
+.--counter > li {
   counter-increment: counter-instructions;
 }
 @media (max-width: 47.99875em) {
