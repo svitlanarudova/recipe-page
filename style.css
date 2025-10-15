@@ -144,7 +144,7 @@ body {
 .omelette {
   --max-w-article: 46rem;
   /* --max-w-image: 41rem; */
-  max-inline-size: min(80.49%, var(--max-w-article));
+  min-inline-size: min(80.49%, var(--max-w-article));
   border-radius: var(--border-r-md);
   background-color: var(--color-white);
 }
