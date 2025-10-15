@@ -112,10 +112,11 @@ body {
   --fz-title-small: 1.25rem;
   --fw-title-small: 600;
   --lh-title: 1;
-  --color-title: var(--color-brown);
+
   font-family: var(--ff-title);
   font-size: var(--fz-title);
   line-height: var(--lh-title);
+  color: var(--color-brown);
 }
 .title--big {
   --fz-title-big: clamp(2.125rem, 1.735rem + 1.662vw, 2.5rem);
