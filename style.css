@@ -1,0 +1,278 @@
+/* ================================
+FONTS
+================================ */
+
+@font-face {
+  font-family: "YoungSerif";
+  src: url("fonts/YoungSerif-Regular.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("fonts/Outfit-VariableFont_wght.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: normal;
+}
+
+/* ================================
+   RESET
+================================ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: inherit;
+}
+
+ul,
+li{
+	list-style: none;
+}
+
+img,
+picture,
+svg{
+	max-inline-size: 100%;
+  block-size: 100%;
+}
+
+/* ================================
+   VARIABLES
+================================ */
+:root {
+  /* Spaces */
+  --space-s: 0.4375rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.78125rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 2.5rem;
+  --space-3xl: 8rem;
+  /* Colors */
+  --color-primary: hsl(30, 10%, 34%);
+  --color-rose-50: hsla(330, 100%, 98%);
+  --color-stone-900: hsla(24, 5%, 18%);
+  --color-stone-150: hsla(30, 18%, 87%);
+  --color-stone-100: hsla(30, 54%, 90%);
+  --color-brown: hsla(14, 45%, 36%);
+  --color-rose-800: hsla(332, 51%, 32%);
+  --color-white: hsla(0, 0%, 100%);
+  /* Typography */
+  --ff-primary: "Outfit", sans-serif;
+  --lh-primary: 1.5;
+  --fw-700: 700;
+  /*Border & Outline*/
+  --border-r-zero: 0;
+  --border-r-sm: 0.75rem;
+  --border-r-md: 1.5rem;
+  --w-separator-line: 0.0625rem;
+  /* Effects */
+  --transition: 0.2s;
+}
+
+/* ================================
+   LAYOUT
+================================ */
+body {
+  font-family: var(--ff-primary);
+  color: var(--color-primary);
+  line-height: var(--lh-primary);
+  background-color: var(--color-stone-100);
+}
+
+/* ================================
+   COMPONENTS
+================================ */
+.title {
+  --ff-title: "YoungSerif", serif;
+  --fz-title: 1.75rem;
+  --fz-title-small: 1.25rem;
+  --fw-title-small: 600;
+  --lh-title: 1;
+  --color-title: var(--color-brown);
+  font-family: var(--ff-title);
+  font-size: var(--fz-title);
+  line-height: var(--lh-title);
+}
+.title--big {
+  --fz-title-big: clamp(2.125rem, 1.735rem + 1.662vw, 2.5rem);
+  font-size: var(--fz-title-big);
+  color: var(--color-stone-900);
+}
+.title--small {
+  font-family: var(--ff-primary);
+  font-size: var(--fz-title-small);
+  color: var(--color-rose-800);
+  font-weight: var(--fw-title-small);
+}
+
+/* ================================
+   MAIN
+================================ */
+.main {
+  display: grid;
+  place-items: center;
+  padding-block: var(--space-3xl);
+}
+
+/* ================================
+   ARTICLE
+================================ */
+.omelette {
+  --max-w-article: 46rem;
+  /* --max-w-image: 41rem; */
+  max-inline-size: min(80.49%, var(--max-w-article));
+  border-radius: var(--border-r-md);
+  background-color: var(--color-white);
+}
+.omelette__image {
+  overflow: hidden;
+  padding: var(--space-xxl) var(--space-xxl) 0 var(--space-xxl);
+  /* max-inline-size: var(--max-w-image); */
+  aspect-ratio: 656 / 300;
+}
+.omelette__image img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  border-radius: var(--border-r-sm);
+}
+.omelette__image:not(:last-child) {
+  margin-block-end: 2.5rem;
+}
+.omelette__body {
+  padding-inline: var(--space-xxl);
+  padding-block-end: var(--space-xxl);
+}
+.omelette__body {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-xl);
+}
+.omelette__body > section {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-lg);
+}
+.omelette__intro {
+  margin-block-start: -0.5rem;
+}
+.omelette__preparation-time {
+  padding: var(--space-lg);
+  background-color: var(--color-rose-50);
+  border-radius: var(--border-r-sm);
+}
+.omelette__preparation-time .title:not(:last-child) {
+  margin-block-end: var(--space-md);
+}
+.list-omelette {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-xs);
+}
+.list-omelette span {
+  font-weight: var(--fw-700);
+}
+.list-omelette--preparation .list-omelette__item, .list-omelette--ingredients .list-omelette__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: var(--space-s);
+  padding-inline-start: var(--space-xl);
+}
+.list-omelette--preparation .list-omelette__item::before, .list-omelette--ingredients .list-omelette__item::before {
+  position: absolute;
+  inset-inline-start: var(--space-s);
+  content: "";
+  inline-size: 0.25rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.list-omelette--preparation .list-omelette__item::before {
+  background-color: var(--color-rose-800);
+}
+.list-omelette--ingredients .list-omelette__item::before {
+  background-color: var(--color-brown);
+}
+.list-omelette--instructions .list-omelette__item {
+  position: relative;
+  padding-inline-start: var(--space-xxl);
+}
+.list-omelette--instructions .list-omelette__item span {
+  display: inline-flex;
+  margin-inline-end: var(--space-s);
+}
+.list-omelette--instructions .list-omelette__item::before {
+  position: absolute;
+  inset-inline-start: var(--space-s);
+  content: counter(counter-instructions) ".";
+  font-weight: var(--fw-700);
+  color: var(--color-brown);
+}
+.table-omelette span {
+  color: var(--color-brown);
+  font-weight: var(--fw-700);
+}
+.table-omelette__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--space-md);
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-xl);
+}
+.table-omelette__row:not(:last-child) {
+  border-block-end: var(--w-separator-line) solid var(--color-stone-150);
+}
+
+.separator-line {
+  border-block-end: var(--w-separator-line) solid var(--color-stone-150);
+}
+
+.__counter {
+  counter-reset: counter-instructions;
+}
+.__counter > li {
+  counter-increment: counter-instructions;
+}
+@media (max-width: 47.99875em) {
+  .omelette__body {
+    padding-inline: clamp(var(--space-xl), 1.523rem + 2.036vw, var(--space-xxl));
+  }
+}
+@media (max-width: 36.875em) {
+  .main {
+    padding: 0;
+  }
+  .omelette {
+    max-inline-size: 100%;
+    border-radius: var(--border-r-zero);
+  }
+  .omelette__image img {
+    border-radius: var(--border-r-zero);
+  }
+  .omelette__image {
+    padding: 0;
+  }
+}
