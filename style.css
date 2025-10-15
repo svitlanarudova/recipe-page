@@ -142,16 +142,13 @@ body {
    ARTICLE
 ================================ */
 .omelette {
-  --max-w-article: 46rem;
-  /* --max-w-image: 41rem; */
-  min-inline-size: min(80.49%, var(--max-w-article));
+  max-inline-size: min(80.49%, 46rem);
   border-radius: var(--border-r-md);
   background-color: var(--color-white);
 }
 .omelette__image {
   overflow: hidden;
   padding: var(--space-xxl) var(--space-xxl) 0 var(--space-xxl);
-  /* max-inline-size: var(--max-w-image); */
   aspect-ratio: 656 / 300;
 }
 .omelette__image img {
