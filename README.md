@@ -6,7 +6,7 @@
 
 ## Project Overview 📋 
 
-This is my solution to the Social Links Profile challenge on Frontend Mentor.
+This is my solution to the Recipe page challenge on Frontend Mentor.
 The goal was to build a responsive component that matches the provided design as closely as possible, working well on both mobile and desktop devices.
 This project served as a hands-on exercise to review and strengthen my earlier HTML and CSS skills.
 
