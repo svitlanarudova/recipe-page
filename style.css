@@ -198,6 +198,7 @@ body {
 .list-omelette--preparation .list-omelette__item, .list-omelette--ingredients .list-omelette__item {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   column-gap: var(--space-s);
   padding-inline-start: var(--space-xl);
